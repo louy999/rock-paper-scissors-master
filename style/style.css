@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  background-color: hsl(229deg, 25%, 31%);
+}
+body #container {
+  width: 600px;
+  margin: 20px auto;
+}
+body #container.role {
+  opacity: 0.7;
+}
+body #container > .score {
+  border: 2px solid hsl(217deg, 16%, 45%);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+body #container > .score img {
+  width: 100px;
+}
+body #container > .score .score {
+  background-color: #fff;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(229deg, 64%, 46%);
+  border-radius: 5px;
+  flex-wrap: wrap;
+  width: 80px;
+}
+body #container > .score .score .number {
+  font-size: 55px;
+  color: hsl(217deg, 16%, 45%);
+  font-weight: 700;
+}
+body #container .chouse {
+  display: flex;
+  justify-content: center;
+  margin: 70px 0;
+}
+body #container .chouse .triangle {
+  width: 250px;
+}
+body #container .chouse .rock,
+body #container .chouse .paper,
+body #container .chouse .scissors {
+  background-image: linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  margin: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  cursor: pointer;
+}
+body #container .chouse .rock .border,
+body #container .chouse .paper .border,
+body #container .chouse .scissors .border {
+  box-shadow: 2px -2px 11px rgba(0, 0, 0, 0.3803921569);
+  background-color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 50%;
+}
+body #container .chouse .rock {
+  transform: translate(0, 100%);
+  background-image: linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
+}
+body #container .chouse .scissors {
+  transform: translate(100%, -50%);
+  background-image: linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
+}
+body #container .chouse .paper {
+  transform: translate(-100%, -50%);
+}
+body #container .play {
+  display: flex;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+body #container .play span {
+  text-transform: uppercase;
+  color: #fff;
+}
+body #container .play .lose-win {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 120px;
+}
+body #container .play .lose-win span {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 700;
+}
+body #container .play .lose-win input {
+  padding: 5px 10px;
+  color: hsl(349deg, 70%, 56%);
+  text-transform: capitalize;
+  border-radius: 5px;
+  width: 150px;
+  border: none;
+  cursor: pointer;
+}
+body #container .play .border-image {
+  background-image: linear-gradient(hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #container .play .border-image .rock,
+body #container .play .border-image .paper,
+body #container .play .border-image .scissors {
+  background-image: linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  margin: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+body #container .play .border-image .rock .border,
+body #container .play .border-image .paper .border,
+body #container .play .border-image .scissors .border {
+  box-shadow: 2px -2px 11px rgba(0, 0, 0, 0.3803921569);
+  background-color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 50%;
+}
+body #container .play .border-image .rock {
+  background-image: linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
+}
+body #container .play .border-image .scissors {
+  background-image: linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
+}
+body .con-role {
+  display: none;
+  background-color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 541656;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .con-role > div {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: hsl(229deg, 25%, 31%);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+body .con-role > div > img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+body .con-role > img {
+  margin: 20px 30px;
+  width: 250px;
+}
+body .btn-rules {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 5px;
+  border: 1px solid hsl(217deg, 16%, 45%);
+  color: #fff;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: hsl(229deg, 25%, 31%);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,199 @@
+@mixin game {
+  background-image: linear-gradient($Paper-Gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 50%;
+  margin: 10px;
+  height: fit-content;
+  position: absolute;
+  cursor: pointer;
+}
+@mixin border {
+  box-shadow: 2px -2px 11px #00000061;
+  background-color: $white;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+@import "./color";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+body {
+  background-color: $Dark-Text;
+  #container {
+    width: 600px;
+    margin: 20px auto;
+    &.role {
+      opacity: 0.7;
+    }
+
+    > .score {
+      border: 2px solid $Header-Outline;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 100px;
+      }
+      .score {
+        background-color: $white;
+        padding: 5px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $Score-Text;
+        border-radius: 5px;
+        flex-wrap: wrap;
+        width: 80px;
+        .number {
+          font-size: 55px;
+          color: $Header-Outline;
+          font-weight: 700;
+        }
+      }
+    }
+    .chouse {
+      display: flex;
+      // display: none;
+      justify-content: center;
+      margin: 70px 0;
+      .triangle {
+        width: 250px;
+      }
+      .rock,
+      .paper,
+      .scissors {
+        @include game();
+        .border {
+          @include border();
+        }
+      }
+      .rock {
+        transform: translate(0, 100%);
+        background-image: linear-gradient($Rock-Gradient);
+      }
+      .scissors {
+        transform: translate(100%, -50%);
+        background-image: linear-gradient($Scissors-Gradient);
+      }
+      .paper {
+        transform: translate(-100%, -50%);
+      }
+    }
+    .play {
+      display: flex;
+      display: none;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      span {
+        text-transform: uppercase;
+        color: $white;
+      }
+      .lose-win {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 120px;
+        span {
+          color: $white;
+          text-transform: uppercase;
+          font-size: 30px;
+          font-weight: 700;
+        }
+        input {
+          padding: 5px 10px;
+          color: hsl(349, 70%, 56%);
+          text-transform: capitalize;
+          border-radius: 5px;
+          width: 150px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+      .border-image {
+        background-image: linear-gradient($Radial-Gradient);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .rock,
+        .paper,
+        .scissors {
+          @include game();
+          width: 150px;
+          height: 150px;
+          .border {
+            @include border();
+          }
+        }
+        .rock {
+          background-image: linear-gradient($Rock-Gradient);
+        }
+        .scissors {
+          background-image: linear-gradient($Scissors-Gradient);
+        }
+      }
+    }
+  }
+  .con-role {
+    display: none;
+    background-color: $white;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 541656;
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    > div {
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      color: $Dark-Text;
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      > img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+    > img {
+      margin: 20px 30px;
+      width: 250px;
+    }
+  }
+  .btn-rules {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: fit-content;
+    border-radius: 5px;
+    border: 1px solid $Header-Outline;
+    color: $white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: $Dark-Text;
+  }
+}
